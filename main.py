@@ -7,22 +7,16 @@ import fonksiyonlar
 from scipy.stats import mode #numpy içerisinde mod hesaplama fonksiyonu olmadığından scipy kütüphanesinden stats modulunu ekliyorum.
 from sklearn.preprocessing import MinMaxScaler
 
-
-
 #Pandas paketindeki read_excel fonksiyonu ile verimi içeriye alıyorum.
-veriyolu =r'C:\Users\agnfu\OneDrive\Masaüstü\FBÜ\veri\proje_iiçin\bist.xlsx'
-veriyolu2 = r'C:\Users\agnfu\OneDrive\Masaüstü\FBÜ\veri\proje_iiçin\sasa.xlsx'
-veriyolu3=r'C:\Users\agnfu\OneDrive\Masaüstü\FBÜ\veri\proje_iiçin\usd.xlsx'
+veriyolu =r'bist.xlsx'
+veriyolu2 = r'sasa.xlsx'
+veriyolu3=r'usd.xlsx'
 veri = pd.read_excel(veriyolu)  # Sütun başlıkları olmadığını belirtiyoruz
 veri.columns = ['Tarih', 'Bist', 'Açılış', 'Yüksek', 'Düşük', 'Hac.', 'Fark %']  # Sütun isimlerini tanımlıyoruz
 veri2 = pd.read_excel(veriyolu2)  # Sütun başlıkları olmadığını belirtiyoruz
 veri2.columns = ['Tarih', 'Sasa_fiyat', 'Açılış', 'Yüksek', 'Düşük', 'Hac.', 'Fark %']  # Sütun isimlerini tanımlıyoruz
 veri3=pd.read_excel(veriyolu3)
 veri3.columns=['Tarih', 'USD/TRY', 'Açılış', 'Yüksek', 'Düşük', 'Fark %']
-
-#print(veri.head())
-#print(veri2.head()) #veri2 ilk 5 veri kontrol
-#print(veri2.dtypes) #verinin tipini öğrenme
 
 yeni_veri=veri.iloc[:,:2]
 yeni_veri2=(veri2.iloc[:,1])
